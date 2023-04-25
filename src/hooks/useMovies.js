@@ -7,7 +7,7 @@ export function useMovies() {
     id: movies.imdbID,
     title: movies.Title,
     year: movies.Year,
-    poster: movies.Poster,
+    image: movies.Poster,
   }));
   return { movies: mappedMovies };
 }
