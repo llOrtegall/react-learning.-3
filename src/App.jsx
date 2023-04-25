@@ -1,10 +1,9 @@
 import "./App.css";
-import responseMovies from "./json/result.json";
-import withNoResult from "./json/no-result.json";
+import { Movies } from "./components/Movies";
+import { useMovies } from "./hooks/useMovies.js";
 
 function App() {
-  const movies = responseMovies.Search;
-  const hasMovies = movies?.length > 0;
+  const { movies: mappedMovies } = useMovies();
 
   return (
     <div className="page">
@@ -15,23 +14,9 @@ function App() {
           <button type="submit"> Buscar </button>
         </form>
       </header>
-      
+
       <main>
-        {hasMovies ? (
-          <ul>
-            {movies.map((movies) => (
-              <li key={movies.imdbID}>
-                <h3>{movies.Title}</h3>
-                <p>{movies.Year}</p>
-                <img src={movies.Poster} alt={movies.Title} />
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>
-            No se encontraron resultados o peliculas intenta con otro nombre
-          </p>
-        )}
+        <Movies movies={mappedMovies} />
       </main>
     </div>
   );
