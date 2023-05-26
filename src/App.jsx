@@ -34,17 +34,15 @@ function useSearch() {
 }
 
 function App() {
-  const { movies } = useMovies();
   const { search, setSearch, error } = useSearch();
+  const { movies, getMovies } = useMovies({ search });
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log({ query })
+    getMovies();
   }
 
   const handleChange = (evt) => {
-    // const newQuery = evt.target.value;
-    // if(newQuery.startsWith(' ')) return
     setSearch(evt.target.value)
   }
 
