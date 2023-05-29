@@ -1,5 +1,5 @@
-import "./App.css";
-import "./index.css";
+import "./styles/App.css";
+import "./styles/index.css";
 import responseMovies from "./mocks/with-result.json";
 //import withOutResults from "./mocks/no-result.json";
 
@@ -35,7 +35,9 @@ function App() {
         </form>
       </header>
 
-      <main>{hasMovies ? renderMovies() : renderNoResults()}</main>
+      <main>
+        {hasMovies ? renderMovies() : renderNoResults()}
+      </main>
     </div>
   );
 }
