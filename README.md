@@ -2,7 +2,7 @@ Crea una aplicación para buscar películas
 
 API a usar:
 
---https://www.odmbapi.com/
+--https://www.omdbapi.com/?apikey=4fd5a756&s={busuqeda}
 --API_KEY: En El Correo.
 
 Requerimientos:

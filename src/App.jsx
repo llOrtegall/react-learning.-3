@@ -36,7 +36,9 @@ function App() {
       </header>
 
       <main>
-        {hasMovies ? renderMovies() : renderNoResults()}
+        {hasMovies 
+          ? renderMovies() 
+          : renderNoResults()}
       </main>
     </div>
   );
