@@ -1,4 +1,5 @@
 import "./App.css";
+import "./index.css";
 import responseMovies from "./mocks/with-result.json";
 //import withOutResults from "./mocks/no-result.json";
 
