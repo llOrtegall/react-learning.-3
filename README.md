@@ -1,5 +1,9 @@
 Crea una aplicación para buscar películas
 
+Correr App en Desarrollo:
+1. npm install ---> instalación de las dependencies utilizadas en este proyecto
+2. npm run dev ---> inicializar aplicación en puerto local
+
 API a usar:
 
 --https://www.omdbapi.com/?apikey=4fd5a756&s={busuqeda}
