@@ -51,7 +51,6 @@ function App() {
     setSearch(evt.target.value)
   }
 
-
   return (
     <div className="page">
       <header>

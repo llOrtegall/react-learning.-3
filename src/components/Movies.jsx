@@ -2,9 +2,8 @@
 function ListOfMovies({ movies }) {
 
   //* Por el momento esta atado a como funciona la API 
-
   return (
-    <ul className="movies"> 
+    <ul className="movies">
       {
         movies.map((movie) => (
           <li className="movie" key={movie.id}>
