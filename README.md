@@ -1,27 +1,30 @@
-Crea una aplicación para buscar películas
+# React + TypeScript + Vite
 
-Correr App en Desarrollo:
-1. npm install ---> instalación de las dependencies utilizadas en este proyecto
-2. npm run dev ---> inicializar aplicación en puerto local
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-API a usar:
+Currently, two official plugins are available:
 
---https://www.omdbapi.com/?apikey=4fd5a756&s={busuqeda}
---API_KEY: En El Correo.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Requerimientos:
+## Expanding the ESLint configuration
 
-- primera iteración:
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-✅ 1. Necesita mostrar un input para buscar la pelicula y un botón para buscar.
-✅ 2. lista las peliculas encontradas y muestra el título, año y poster
-✅ -- Que el formulario funcione
-✅ 3. haz que las películas se muestren en un grid responsive
-✅ -- Hacer el fetching de datos a la API
+- Configure the top-level `parserOptions` property like this:
 
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-- Segunda iteración:
-
-✅ 4. Evitar que se gala la misma búsqueda dos veces seguidas.
-5. Haz que la búsqueda se haga automaticamente al escribir
-6. Evita que se haga la búsqueda continuamente al escribir(debouce)
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
