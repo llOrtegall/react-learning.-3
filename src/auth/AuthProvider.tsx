@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 interface AuthContextType {
   isAuthenticated: boolean
@@ -12,15 +13,23 @@ interface Props {
 
 const AuthContext = createContext<AuthContextType | undefined>({
   isAuthenticated: false,
-  login: () => {},
-  logout: () => {}
+  login: () => { },
+  logout: () => { }
 })
 
 export const AuthProvider = ({ children }: Props): JSX.Element => {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const navigate = useNavigate()
 
-  const login = (): void => { setIsAuthenticated(true) }
-  const logout = (): void => { setIsAuthenticated(false) }
+  const login = (): void => {
+    setIsAuthenticated(true)
+    navigate('/')
+  }
+
+  const logout = (): void => {
+    setIsAuthenticated(false)
+    navigate('/login')
+  }
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
